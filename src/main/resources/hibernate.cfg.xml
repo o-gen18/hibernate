@@ -21,5 +21,8 @@
         <mapping class="onetomany.Model"/>
         <mapping class="manytomany.Book"/>
         <mapping class="manytomany.Author"/>
+        <mapping class="bidirectional.Automobile"/>
+        <mapping class="bidirectional.Type"/>
+
     </session-factory>
 </hibernate-configuration>
