@@ -16,6 +16,9 @@ public class Candidate {
 
     private double salary;
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    private VacanciesStorage vacanciesStorage;
+
     public static Candidate of(String name, double experience, double salary) {
         Candidate candidate = new Candidate();
         candidate.name = name;
@@ -56,14 +59,12 @@ public class Candidate {
         this.salary = salary;
     }
 
-    @Override
-    public String toString() {
-        return "Candidate{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", experience=" + experience +
-                ", salary=" + salary +
-                '}';
+    public VacanciesStorage getVacanciesStorage() {
+        return vacanciesStorage;
+    }
+
+    public void setVacanciesStorage(VacanciesStorage vacanciesStorage) {
+        this.vacanciesStorage = vacanciesStorage;
     }
 
     @Override
@@ -81,5 +82,16 @@ public class Candidate {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", experience=" + experience +
+                ", salary=" + salary +
+                ", vacanciesStorage=" + vacanciesStorage +
+                '}';
     }
 }

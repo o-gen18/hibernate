@@ -18,6 +18,8 @@
         <property name="use_sql_comments">true</property>
 
         <mapping class="hql.Candidate"/>
+        <mapping class="hql.Vacancy"/>
+        <mapping class="hql.VacanciesStorage"/>
 
     </session-factory>
 </hibernate-configuration>
